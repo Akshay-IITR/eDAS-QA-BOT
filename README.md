@@ -50,6 +50,10 @@ conda install -c conda-forge langchain-ollama
 
 # 6. Run server
 uvicorn main:app --reload --port 8000
+
+Verify the server is alive - "http://localhost:8000/health"
+And for the full interactive API docs:
+Copy and past this into the browser - "http://localhost:8000/docs"
 ```
 
 ## API Endpoints
