@@ -1,6 +1,7 @@
 # eDAS-QA-BOT
 
 ```
+# Folder Structure
 docassist/
 ├── main.py
 ├── requirements.txt
