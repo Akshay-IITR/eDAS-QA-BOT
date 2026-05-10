@@ -1,9 +1,4 @@
 # eDAS-QA-BOT
-# DocAssist+ & VoiceBot
-
-AI Engineer Test — Full Implementation
-
-## Project Structure
 
 ```
 docassist/
