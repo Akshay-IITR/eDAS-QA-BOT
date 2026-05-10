@@ -38,13 +38,12 @@ conda activate edas
 pip install -r requirements.txt
 
 # 4. Install Ollama & Pull Required Models
+
 Download and install Ollama
-```
 irm https://ollama.com/install.ps1 | iex
-```
 
 Pull models locally:
-```
+
 ollama pull llama3.1
 ollama pull nomic-embed-text
 conda install -c conda-forge langchain-ollama
