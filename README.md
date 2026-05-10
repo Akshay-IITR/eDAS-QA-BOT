@@ -2,29 +2,22 @@
 
 ```
 docassist/
-├── main.py                        # FastAPI app entry point
+├── main.py
 ├── requirements.txt
-├── .env.example
 ├── app/
-│   ├── config.py                  # Settings via env vars
-│   ├── models/schemas.py          # Pydantic request/response models
-│   ├── api/
-│   │   ├── upload.py              # POST /api/v1/documents/upload
-│   │   └── query.py               # POST /api/v1/query
-│   └── core/
-│       ├── document_processor.py  # Extract → chunk → assign IDs
-│       ├── embeddings.py          # OpenAI text-embedding-3-small
-│       ├── vector_store.py        # FAISS in-memory store
-│       ├── intent_detector.py     # Rule-based + LLM fallback
-│       ├── emotion_detector.py    # Lexicon-based + LLM fallback
-│       └── response_generator.py # Prompt builder + LLM call
+│   ├── core/
+│   │   ├── document_processor.py
+│   │   ├── embeddings.py
+│   │   ├── vector_store.py
+│   │   ├── intent_detector.py
+│   │   ├── emotion_detector.py
+│   │   └── response_generator.py
+│   └── api/
+│       ├── upload.py
+│       └── query.py
 └── voicebot/
-    ├── core/
-    │   ├── session_store.py       # In-memory session management
-    │   ├── intent_router.py       # 3-intent classifier
-    │   └── conversation_engine.py # Multi-turn slot filling logic
-    └── api/
-        └── chat.py                # POST /api/v1/chat, /voice
+    └── core/
+        └── intent_router.py
 ```
 
 ## Setup
@@ -40,9 +33,14 @@ source venv/bin/activate   # Windows: venv\Scripts\activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Configure environment
-cp .env.example .env
-# Edit .env: set OPENAI_API_KEY=sk-your-key
+# 4. Install Ollama & Pull Required Models
+Download and install Ollama
+
+Pull models locally:
+```
+ollama pull llama3.1
+ollama pull nomic-embed-text
+```
 
 # 5. Run server
 uvicorn main:app --reload --port 8000
