@@ -31,19 +31,23 @@ docassist/
 cd docassist
 
 # 2. Create virtual environment
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+conda create --name edas
+conda activate edas
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
 # 4. Install Ollama & Pull Required Models
 Download and install Ollama
+```
+irm https://ollama.com/install.ps1 | iex
+```
 
 Pull models locally:
 ```
 ollama pull llama3.1
 ollama pull nomic-embed-text
+conda install -c conda-forge langchain-ollama
 ```
 
 # 5. Run server
