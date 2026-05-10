@@ -4,7 +4,10 @@
 docassist/
 ├── main.py
 ├── requirements.txt
+├── tests/test_all.py
+├── .env
 ├── app/
+|   ├── config.py
 │   ├── core/
 │   │   ├── document_processor.py
 │   │   ├── embeddings.py
