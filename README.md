@@ -38,18 +38,17 @@ conda activate edas
 pip install -r requirements.txt
 
 # 4. Install Ollama & Pull Required Models
-
 Download and install Ollama
+
 irm https://ollama.com/install.ps1 | iex
 
-Pull models locally:
+# 5. Pull models locally:
 
 ollama pull llama3.1
 ollama pull nomic-embed-text
 conda install -c conda-forge langchain-ollama
-```
 
-# 5. Run server
+# 6. Run server
 uvicorn main:app --reload --port 8000
 ```
 
